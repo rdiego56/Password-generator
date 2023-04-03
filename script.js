@@ -20,7 +20,7 @@ if (!includeLowercase && !includeUppercase && !inludeNumbers && !includeSpecialC
 }
 
 let passwordCharacters =[]
-const specialCharacters = " !";
+const specialCharacters= "!@#$%^&*"
 
 if(includeSpecialCharacters) {
   passwordCharacters = passwordCharacters.concat(specialCharacters.split (""));
