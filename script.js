@@ -9,7 +9,7 @@ function generatePassword() {
     return "";
 
   }
-
+// added for for requirments nedded for code
   var includeLowercase = confirm("Include lower case letters in password?");
   var includeUppercase = confirm("Include upper case letters in password?");
   var includeNumbers = confirm("Include numbers in password");
@@ -19,7 +19,7 @@ function generatePassword() {
     alert ("Error, invalid character types.\nPleaseinclude at least one type of character.");
     return "";
   }
-
+// added var for characters able to be used
   var chars = ""
   if (includeLowercase) {
     chars += "abcdefghijklmnopqrstuvwxyz";
@@ -33,12 +33,12 @@ function generatePassword() {
   if (includeSpecialCharacters) {
     chars += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
   }
-
+// added forloop to generate password
   var Code = "";
-  for(var i = 0; i < length; i++) {
+  for(var i = 0; i < passwordlength; i++) {
     Code += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-
+  return Code;
 }
 
 
@@ -48,7 +48,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-  alert("Generate password: " + password)
+  alert("Generate password: " + password);
 }
 
 // Add event listener to generate button

@@ -17,12 +17,14 @@ body {
   background-color: #f9fbfd;
 }
 
+/* code for the entire page */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* code for main header */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +32,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* start code for main card to generate password */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -71,7 +74,9 @@ header {
   display: block;
   clear: both;
 }
+/* end code for main card */
 
+/* code for button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -92,11 +97,11 @@ button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
-
+/* end code for button */
 .float-right {
   float: right;
 }
-
+/* code for password */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
