@@ -1,6 +1,6 @@
 # Created Password Generator
 
-![Password-generator](Password-generator.png)
+![Password-generator](https://user-images.githubusercontent.com/128023854/230821345-703b2883-ed9b-4e44-938f-990a8ddd98b4.png)
 
 I needed to generate a password to meet a certain criteria and make sure that it is a strong password.
 
