@@ -3,30 +3,41 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword() {
-  let passwordlenght = parseInt(prompt("How long should the passwrond be?"))
-  if(passwordlenght < 8 || passwordlenght > 128) {
+  let passwordlength = parseInt(prompt("How long should the password be?"))
+  if(passwordlength < 8 || passwordlength > 128) {
     alert("Error, invalid password lenght.\nPlease choose a password greater than 8 and less than 128 characters.");
+    return "";
+
+  }
+
+  var includeLowercase = confirm("Include lower case letters in password?");
+  var includeUppercase = confirm("Include upper case letters in password?");
+  var includeNumbers = confirm("Include numbers in password");
+  var includeSpecialCharacters = confirm("Include special characters in password?");
+
+  if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialCharacters) {
+    alert ("Error, invalid character types.\nPleaseinclude at least one type of character.");
     return "";
   }
 
-var includeLowercase = confirm("Include lower case letters in password?");
-var includeUppercase = confrim("Include upper case letters in password?");
-var inludeNumbers = confirm("Include numbers in password");
-var includeSpecialCharacters = confirm("Include special characters in password?");
+  var chars = ""
+  if (includeLowercase) {
+    chars += "abcdefghijklmnopqrstuvwxyz";
+  }
+  if (includeUppercase) {
+    chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (includeNumbers) {
+    chars += "0123456789";
+  }
+  if (includeSpecialCharacters) {
+    chars += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  }
 
-if (!includeLowercase && !includeUppercase && !inludeNumbers && !includeSpecialCharacters) {
-  alert ("Error, invalid character types.\nPleaseinclude at least one type of character.");
-  return "";
-}
-
-let passwordCharacters =[]
-const specialCharacters= "!@#$%^&*"
-
-if(includeSpecialCharacters) {
-  passwordCharacters = passwordCharacters.concat(specialCharacters.split (""));
-}
-
-let result = "";
+  var Code = "";
+  for(var i = 0; i < length; i++) {
+    Code += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
 
 }
 
@@ -37,7 +48,9 @@ function writePassword() {
 
   passwordText.value = password;
 
+  alert("Generate password: " + password)
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
